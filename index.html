@@ -9,6 +9,7 @@
             --red: #c8102e;
             --black: #1a1a1a;
             --grey: #333333;
+            --lightgrey: #f5f5f5;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
@@ -35,47 +36,30 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 1.8rem;
+            margin-left: 2rem;
             font-weight: 500;
         }
         nav a:hover { color: var(--red); }
 
-        /* HERO WITH SCROLL VIDEO */
-        #hero {
-            position: relative;
+        .hero {
             height: 100vh;
-            overflow: hidden;
-        }
-        #hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-        .hero-overlay {
-            position: relative;
-            z-index: 2;
-            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/home-hero.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            background: rgba(0, 0, 0, 0.45);
         }
         .hero-content {
             max-width: 900px;
             padding: 0 20px;
         }
-        .hero-content h1 {
+        .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
         }
-        .hero-content p {
-            font-size: 1.35rem;
+        .hero p {
+            font-size: 1.4rem;
             margin-bottom: 2rem;
         }
         .btn {
@@ -86,12 +70,9 @@
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            margin: 10px 5px;
+            margin: 10px;
         }
         .btn:hover { background: #a00; }
-        .btn-secondary {
-            background: #333;
-        }
 
         section {
             padding: 100px 5%;
@@ -118,22 +99,22 @@
         }
         .card img {
             width: 100%;
-            height: 280px;
+            height: 320px;
             object-fit: cover;
         }
         .card-content {
             padding: 25px;
         }
         .price {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: var(--red);
             margin: 15px 0;
         }
 
         .testimonial {
-            background: #f9f9f9;
-            padding: 35px;
+            background: var(--lightgrey);
+            padding: 40px;
             border-radius: 10px;
             margin: 25px 0;
             font-style: italic;
@@ -159,7 +140,7 @@
         }
 
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.8rem; }
+            .hero h1 { font-size: 2.8rem; }
             nav a { margin-left: 1rem; font-size: 0.95rem; }
         }
     </style>
@@ -178,44 +159,37 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION WITH SCROLL VIDEO -->
-    <section id="hero">
-        <video id="hero-video" muted playsinline>
-            <source src="hero-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h1>Welcome to Universal Hoops</h1>
-                <p>Where passion meets purpose and real development happens.<br>
-                Built for athletes who are serious about improving their game.</p>
-                <a href="#services" class="btn">Book a Session</a>
-                <a href="#coaches" class="btn btn-secondary">Meet the Coaches</a>
-            </div>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Universal Hoops</h1>
+            <p>Where passion meets purpose and real development happens.<br>
+            This is more than just training — it’s where athletes get better.</p>
+            <a href="#services" class="btn">Book a Session</a>
+            <a href="#coaches" class="btn" style="background:#333;">Meet the Coaches</a>
         </div>
     </section>
 
     <!-- MISSION -->
     <section>
         <h2>We're Here to Help You Thrive</h2>
-        <div style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.15rem;">
-            <p>At Universal Hoops, the focus is on what actually translates to performance. Every session is designed with intent — targeting footwork, shooting, decision-making, and the ability to create and react under pressure.</p>
+        <div style="max-width:900px; margin:0 auto; text-align:center; font-size:1.15rem;">
+            <p>Welcome to Universal Hoops — where passion meets purpose and real development happens. This is more than just a place to train; it’s an environment built for athletes who are serious about improving their game and reaching their full potential.</p>
             <br>
-            <p>Training isn’t random. It’s structured, purposeful, and built around real in-game situations so players can perform with confidence when it matters.</p>
+            <p>Every session is designed with intent, targeting footwork, shooting, decision-making, and performing under pressure. Training is structured and purposeful so players can perform with confidence when it matters most.</p>
         </div>
     </section>
 
     <!-- COACHES -->
-    <section id="coaches" style="background: #f9f9f9;">
+    <section id="coaches" style="background:#f9f9f9;">
         <h2>Meet Your Coaches</h2>
         <div class="grid">
             <div class="card">
-                <img src="images/trent.jpg" alt="Trent Andre">
+                <img src="images/trent.jpg" alt="Trent">
                 <div class="card-content">
                     <h3>Trent Andre</h3>
                     <p><strong>Founder & Head Coach</strong> — NBL1 Casey</p>
-                    <p>13 years of competitive experience. Currently playing NBL1 for Casey. Passionate about developing complete players through skill, mindset, and in-game IQ.</p>
+                    <p>With 13 years of experience and currently playing NBL1 for Casey, Trent brings elite knowledge and a genuine passion for developing complete players.</p>
                 </div>
             </div>
             <div class="card">
@@ -223,7 +197,7 @@
                 <div class="card-content">
                     <h3>Jack</h3>
                     <p><strong>Coach</strong></p>
-                    <p>Dedicated coach helping athletes build strong fundamentals and confidence on the court.</p>
+                    <p>Meet Jack — dedicated coach helping athletes build fundamentals, confidence and a real love for the game.</p>
                 </div>
             </div>
         </div>
@@ -233,34 +207,33 @@
     <section id="services">
         <h2>Our Services</h2>
         <div class="grid">
-            <!-- 1 on 1 -->
+
             <div class="card">
                 <div class="card-content">
                     <h3>1 on 1 Coaching</h3>
-                    <ul style="margin: 15px 0; line-height: 1.8;">
+                    <ul style="margin:20px 0; line-height:1.8;">
                         <li>Skill Work & Jump-Shot Mechanics</li>
                         <li>Footwork & Game Reads</li>
                         <li>Feedback & Goal Setting</li>
                     </ul>
-                    <div class="price">One-off: $85/hr</div>
-                    <div class="price">5-week: $415</div>
-                    <div class="price">10-week: $800</div>
+                    <div class="price">One-off session — $85/hr</div>
+                    <div class="price">5 week lock-in — $415</div>
+                    <div class="price">10 week lock-in — $800</div>
                     <a href="#contact" class="btn">Enquire Now</a>
                 </div>
             </div>
 
-            <!-- Semi Private -->
             <div class="card">
                 <div class="card-content">
                     <h3>Semi-Private Sessions</h3>
-                    <ul style="margin: 15px 0; line-height: 1.8;">
+                    <ul style="margin:20px 0; line-height:1.8;">
                         <li>Skills Work & Jump-Shot Repetition</li>
                         <li>In-Game Scenarios</li>
                         <li>End-of-Session Evaluation</li>
                     </ul>
-                    <div class="price">One-off: $50</div>
-                    <div class="price">5-week: $240</div>
-                    <div class="price">10-week: $450</div>
+                    <div class="price">One-off session — $50</div>
+                    <div class="price">5 week lock-in — $240</div>
+                    <div class="price">10 week lock-in — $450</div>
                     <a href="#contact" class="btn">Enquire Now</a>
                 </div>
             </div>
@@ -268,33 +241,33 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section id="testimonials" style="background: #f9f9f9;">
+    <section id="testimonials" style="background:#f9f9f9;">
         <h2>What Parents Say</h2>
-        <div style="max-width: 1000px; margin: 0 auto;">
+        <div style="max-width:1000px; margin:0 auto;">
             <div class="testimonial">
-                “We have been working with Trent for over a year... We cannot recommend Trent enough.”
-                <div class="testimonial-author">— Ionela M, Mother of athlete</div>
+                “We have been working with Trent for over a year. When we first started, my son knew nothing about basketball... We cannot recommend Trent enough.”
+                <div class="testimonial-author">— Ionela. M (Mother of athlete)</div>
             </div>
             <div class="testimonial">
-                “The improvement in Jackson's skills and confidence has been incredible.”
-                <div class="testimonial-author">— Adam C, Father of athlete</div>
+                “My son Jackson has been training with Trent for the past 3 years. The improvement in Jackson's skills and fitness has been incredible... I would highly recommend Trent.”
+                <div class="testimonial-author">— Adam. C (Father of athlete)</div>
             </div>
             <div class="testimonial">
-                “Trent has been fantastic for our son's development and confidence.”
-                <div class="testimonial-author">— Jason C, Father of athlete</div>
+                “Trent has been fantastic for our son's development and confidence... Thanks so much, Trent.”
+                <div class="testimonial-author">— Jason. C (Father of athlete)</div>
             </div>
         </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" style="background: var(--black); color: white; text-align: center;">
-        <h2 style="color: white;">Ready to Level Up?</h2>
-        <p style="font-size: 1.3rem; margin: 30px 0;">
+    <section id="contact" style="background:var(--black); color:white; text-align:center;">
+        <h2 style="color:white;">Get In Touch</h2>
+        <p style="font-size:1.3rem; margin:30px 0;">
             📞 <strong>0431 888 129</strong><br><br>
-            ✉️ <a href="mailto:universalhoops247@gmail.com" style="color: var(--red);">universalhoops247@gmail.com</a><br><br>
-            📷 <a href="https://www.instagram.com/universalhoops/" target="_blank" style="color: var(--red);">@universalhoops</a>
+            ✉️ <a href="mailto:universalhoops247@gmail.com" style="color:var(--red);">universalhoops247@gmail.com</a><br><br>
+            📷 <a href="https://www.instagram.com/universalhoops/" target="_blank" style="color:var(--red);">@universalhoops</a>
         </p>
-        <a href="mailto:universalhoops247@gmail.com" class="btn" style="background: white; color: var(--black);">Send an Enquiry</a>
+        <a href="mailto:universalhoops247@gmail.com" class="btn" style="background:white; color:var(--black);">Send an Enquiry</a>
     </section>
 
     <!-- FOOTER -->
@@ -302,7 +275,7 @@
         <div class="footer-grid">
             <div>
                 <h3>Universal Hoops</h3>
-                <p>Universal Athlete Centre<br>Keysborough, Victoria</p>
+                <p>Training at Universal Athlete Centre<br>Keysborough, Victoria</p>
             </div>
             <div>
                 <h4>Contact</h4>
@@ -312,42 +285,10 @@
             <div>
                 <h4>Location</h4>
                 <p>32 Atlantic Drive, Keysborough VIC 3173</p>
-                <!-- You can replace with real Google Maps embed later -->
             </div>
         </div>
-        <p style="margin-top: 50px; opacity: 0.7;">© 2026 Universal Hoops. All Rights Reserved.</p>
+        <p style="margin-top:50px; opacity:0.7;">© 2026 Universal Hoops. All Rights Reserved.</p>
     </footer>
-
-    <!-- SCROLL VIDEO SCRIPT -->
-    <script>
-        const video = document.getElementById('hero-video');
-        
-        if (video) {
-            video.pause();                    // Don't autoplay
-            video.currentTime = 0;
-
-            let ticking = false;
-
-            function updateVideo() {
-                const scrollY = window.scrollY;
-                const maxScroll = 900;                    // Adjust this number if needed
-                let progress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
-                
-                video.currentTime = progress * (video.duration || 4);
-                ticking = false;
-            }
-
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    requestAnimationFrame(updateVideo);
-                    ticking = true;
-                }
-            });
-
-            // Load video
-            video.load();
-        }
-    </script>
 
 </body>
 </html>
