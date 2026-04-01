@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universal Hoops | Basketball Coaching Melbourne</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #D32F2F;
+    --red-dark: #9B1B1B;
+    --red-light: #FF5252;
+    --black: #0a0a0a;
+    --black2: #141414;
+    --black3: #1e1e1e;
+    --white: #FFFFFF;
+    --grey: #888888;
+    --grey-light: #cccccc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 72px;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(211,47,47,0.3);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--red); }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--grey-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--red); }
+
+  .nav-cta {
+    background: var(--red);
+    color: var(--white) !important;
+    padding: 10px 24px;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--red-dark) !important; color: var(--white) !important; }
+
+  /* ─── HERO ─── */
+  #home {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('IMG_7940.jpeg');
+    background-size: cover;
+    background-position: center 30%;
+    filter: brightness(0.35);
+    transform: scale(1.05);
+    animation: heroZoom 12s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.0); }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10,10,10,0.2) 0%,
+      rgba(211,47,47,0.08) 40%,
+      rgba(10,10,10,0.85) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+    animation: fadeUp 1s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(72px, 12vw, 160px);
+    line-height: 0.9;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-shadow: 0 0 80px rgba(211,47,47,0.4);
+    margin-bottom: 12px;
+  }
+
+  .hero-title .red { color: var(--red); }
+
+  .hero-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--grey-light);
+    max-width: 540px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 40px;
+    text-decoration: none;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 40px;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.3);
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--red); transform: translateY(-2px); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.5;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .hero-scroll span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .hero-scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--white), transparent);
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ─── SECTION COMMON ─── */
+  section { padding: 100px 0; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .section-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 80px);
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .section-body {
+    font-size: 16px;
+    color: var(--grey-light);
+    line-height: 1.75;
+    max-width: 680px;
+  }
+
+  .red-line {
+    width: 60px;
+    height: 3px;
+    background: var(--red);
+    margin-bottom: 32px;
+  }
+
+  /* ─── ABOUT INTRO ─── */
+  #about-intro {
+    background: var(--black2);
+  }
+
+  .about-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-intro-img {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+  }
+
+  .about-intro-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .about-intro-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to top, var(--black2), transparent);
+  }
+
+  .red-accent-bar {
+    position: absolute;
+    top: 20px; left: -12px;
+    width: 4px;
+    height: 80px;
+    background: var(--red);
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .stat-item { }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: var(--red);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  /* ─── PHOTO BREAK ─── */
+  .photo-break {
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photo-break img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.5);
+  }
+
+  .photo-break-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(211,47,47,0.2), rgba(10,10,10,0.6));
+  }
+
+  .photo-break-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 100px);
+    color: var(--white);
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-shadow: 0 0 60px rgba(211,47,47,0.5);
+  }
+
+  /* ─── SERVICES ─── */
+  #services {
+    background: var(--black);
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .services-header .red-line { margin: 0 auto 32px; }
+
+  .services-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 48px;
+  }
+
+  .tab-btn {
+    background: var(--black3);
+    color: var(--grey);
+    border: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 36px;
+    cursor: pointer;
+    transition: all 0.2s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .tab-btn.active {
+    background: var(--red);
+    color: var(--white);
+  }
+  .tab-btn:hover:not(.active) { color: var(--white); background: #2a2a2a; }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .service-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--black3);
+    overflow: hidden;
+    border: 1px solid rgba(211,47,47,0.15);
+  }
+
+  .service-card-content {
+    padding: 56px;
+  }
+
+  .service-card-img {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+  }
+  .service-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+    filter: brightness(0.7);
+  }
+  .service-card:hover .service-card-img img { transform: scale(1.05); }
+
+  .service-includes {
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service-item h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .service-item p {
+    font-size: 14px;
+    color: var(--grey);
+    line-height: 1.6;
+  }
+
+  .pricing-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .price-badge {
+    background: rgba(211,47,47,0.12);
+    border: 1px solid rgba(211,47,47,0.3);
+    padding: 14px 20px;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+
+  .price-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .price-label {
+    font-size: 11px;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* ─── COACHES ─── */
+  #coaches {
+    background: var(--black2);
+  }
+
+  .coaches-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 64px;
+  }
+
+  .coach-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: var(--black3);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .coach-card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    transition: transform 0.5s ease;
+    filter: brightness(0.45);
+  }
+  .coach-card:hover .coach-card-bg { transform: scale(1.05); filter: brightness(0.55); }
+
+  .coach-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, transparent 100%);
+  }
+
+  .coach-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .coach-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .coach-bio {
+    font-size: 14px;
+    color: var(--grey-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .coach-tag {
+    display: inline-block;
+    background: rgba(211,47,47,0.2);
+    color: var(--red-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    border: 1px solid rgba(211,47,47,0.3);
+  }
+
+  .coach-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 500px;
+  }
+
+  .coach-placeholder-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(211,47,47,0.1);
+    border: 2px dashed rgba(211,47,47,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #testimonials::before {
+    content: '"';
+    position: absolute;
+    top: -40px;
+    left: 40px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 400px;
+    color: rgba(211,47,47,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .testimonials-header .red-line { margin: 0 auto 32px; }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .testimonial-card {
+    background: var(--black3);
+    padding: 40px;
+    border-left: 3px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .testimonial-card:hover { border-left-color: var(--red); }
+
+  .testimonial-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+  }
+  .star { color: var(--red); font-size: 16px; }
+
+  .testimonial-text {
+    font-size: 15px;
+    color: var(--grey-light);
+    line-height: 1.75;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .testimonial-role {
+    font-size: 12px;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* ─── BLOG ─── */
+  #blog {
+    background: var(--black2);
+  }
+
+  .blog-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .blog-card {
+    background: var(--black3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+  }
+  .blog-card:hover { transform: translateY(-4px); }
+
+  .blog-card-img {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+  .blog-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: transform 0.4s ease;
+  }
+  .blog-card:hover .blog-card-img img { transform: scale(1.05); }
+
+  .blog-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--red);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+  }
+
+  .blog-card-content {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-date {
+    font-size: 11px;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .blog-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 12px;
+    flex: 1;
+  }
+
+  .blog-excerpt {
+    font-size: 13px;
+    color: var(--grey);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .blog-read-more {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s;
+  }
+  .blog-read-more:hover { gap: 12px; }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--black);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 40px;
+  }
+
+  .contact-info-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(211,47,47,0.1);
+    border: 1px solid rgba(211,47,47,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .contact-info-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+
+  .contact-info-value {
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .contact-info-value a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-info-value a:hover { color: var(--red); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--grey);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--black3);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    padding: 14px 18px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    resize: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--red);
+  }
+
+  .form-group select option { background: var(--black3); }
+
+  .form-submit {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 18px 48px;
+    cursor: pointer;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    transition: background 0.2s, transform 0.2s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+  .map-container {
+    margin-top: 80px;
+    height: 320px;
+    overflow: hidden;
+    border: 1px solid rgba(211,47,47,0.2);
+    position: relative;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(80%) invert(5%) contrast(90%);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--black2);
+    border-top: 1px solid rgba(211,47,47,0.2);
+    padding: 60px 0 32px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .footer-brand-name span { color: var(--red); }
+
+  .footer-tagline {
+    font-size: 14px;
+    color: var(--grey);
+    line-height: 1.6;
+    max-width: 280px;
+    margin-bottom: 24px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(211,47,47,0.1);
+    border: 1px solid rgba(211,47,47,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.2s;
+  }
+  .social-link:hover { background: var(--red); }
+
+  .footer-col-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+    color: var(--grey);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--grey);
+    letter-spacing: 1px;
+  }
+
+  /* ─── CALL TO ACTION BANNER ─── */
+  .cta-banner {
+    background: var(--red);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: 'LEVEL UP';
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px;
+    color: rgba(0,0,0,0.15);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: 10px;
+  }
+
+  .cta-banner h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 80px);
+    color: var(--white);
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .cta-banner p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .btn-white {
+    display: inline-block;
+    background: var(--white);
+    color: var(--red);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 48px;
+    text-decoration: none;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .btn-white:hover { transform: translateY(-2px); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .about-intro-grid,
+    .service-card,
+    .contact-grid,
+    .coaches-grid,
+    .footer-grid { grid-template-columns: 1fr; }
+    .testimonials-grid,
+    .blog-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .blog-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .container { padding: 0 20px; }
+    section { padding: 72px 0; }
+    .hero-title { font-size: 72px; }
+    .service-card-content { padding: 32px; }
+    .coach-card { min-height: 400px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">UNIVERSAL <span>HOOPS</span></a>
+  <ul class="nav-links">
+    <li><a href="#about-intro">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#coaches">Coaches</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Basketball Coaching · Keysborough, Melbourne</p>
+    <h1 class="hero-title">UNIVERSAL<br><span class="red">HOOPS</span></h1>
+    <p class="hero-subtitle">Where passion meets purpose. Real development for athletes who are serious about their game.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">View Training Options</a>
+      <a href="#contact" class="btn-outline">Book a Session</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT INTRO -->
+<section id="about-intro">
+  <div class="container">
+    <div class="about-intro-grid">
+      <div class="about-intro-img">
+        <div class="red-accent-bar"></div>
+        <img src="IMG_6454.jpeg" alt="Universal Hoops training session" loading="lazy">
+      </div>
+      <div>
+        <p class="section-eyebrow">Who We Are</p>
+        <h2 class="section-title">MORE THAN JUST A PLACE TO TRAIN</h2>
+        <div class="red-line"></div>
+        <p class="section-body">Welcome to Universal Hoops — where passion meets purpose and real development happens. Every session is designed with intent, targeting the key areas that impact the game most — footwork, shooting, decision-making, and the ability to create and react under pressure.</p>
+        <p class="section-body" style="margin-top:16px;">Training isn't random or repetitive for the sake of it. It's structured, purposeful, and built around real in-game situations so players can perform with confidence when it matters. Players are challenged to think, move, and compete at a higher level.</p>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-num">13+</div>
+            <div class="stat-label">Years Playing</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">NBL1</div>
+            <div class="stat-label">Level Coach</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">ALL</div>
+            <div class="stat-label">Skill Levels</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK 1 -->
+<div class="photo-break">
+  <img src="IMG_7940.jpeg" alt="Basketball court at Universal Athlete Centre" loading="lazy">
+  <div class="photo-break-overlay">
+    <div class="photo-break-text">WE'RE HERE TO HELP<br>YOU THRIVE</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <p class="section-eyebrow">Training Programs</p>
+      <h2 class="section-title">CHOOSE YOUR PATH</h2>
+      <div class="red-line"></div>
+    </div>
+    <div class="services-tabs">
+      <button class="tab-btn active" onclick="showTab('one-on-one')">1 on 1 Coaching</button>
+      <button class="tab-btn" onclick="showTab('semi-private')">Semi Private Sessions</button>
+    </div>
+
+    <!-- 1 on 1 -->
+    <div class="tab-panel active" id="tab-one-on-one">
+      <div class="service-card">
+        <div class="service-card-content">
+          <p class="section-eyebrow">Individual Training</p>
+          <h3 class="section-title" style="font-size:48px;">1 ON 1<br>COACHING</h3>
+          <div class="red-line"></div>
+          <p class="section-body" style="font-size:14px;">Fully personalised sessions designed around your specific needs and goals. Maximum attention, maximum development.</p>
+
+          <div class="service-includes">
+            <div class="service-item">
+              <h4>Skill Work / Jump-Shot Mechanics</h4>
+              <p>Tweak the details in jump-shot execution, paired with ball-handling drills — refining mechanics for better results while enhancing ball control.</p>
+            </div>
+            <div class="service-item">
+              <h4>Footwork / Game Reads</h4>
+              <p>Game reads to become comfortable under pressure. Reading and reacting is one of the core focuses of every session.</p>
+            </div>
+            <div class="service-item">
+              <h4>Feedback / Future Goal Setting</h4>
+              <p>Detailed feedback after every session with clear direction on what to improve — and time for any questions you have.</p>
+            </div>
+          </div>
+
+          <div class="pricing-row">
+            <div class="price-badge">
+              <div class="price-amount">$85</div>
+              <div class="price-label">One-off / hr</div>
+            </div>
+            <div class="price-badge">
+              <div class="price-amount">$415</div>
+              <div class="price-label">5 Week Lock-in</div>
+            </div>
+            <div class="price-badge">
+              <div class="price-amount">$800</div>
+              <div class="price-label">10 Week Lock-in</div>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:32px;">Book a Session</a>
+        </div>
+        <div class="service-card-img">
+          <img src="UNIVERSN.jpeg" alt="1 on 1 basketball training" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Semi Private -->
+    <div class="tab-panel" id="tab-semi-private">
+      <div class="service-card">
+        <div class="service-card-content">
+          <p class="section-eyebrow">Small Group Training</p>
+          <h3 class="section-title" style="font-size:48px;">SEMI<br>PRIVATE</h3>
+          <div class="red-line"></div>
+          <p class="section-body" style="font-size:14px;">Train alongside other athletes in a high-energy small group environment. Competitive, purposeful, and structured for real improvement.</p>
+
+          <div class="service-includes">
+            <div class="service-item">
+              <h4>Skills Work / Jump-Shot Repetition</h4>
+              <p>Delve into the details of jump-shot execution and ball-handling through tailored drills, refining your shot mechanics alongside your peers.</p>
+            </div>
+            <div class="service-item">
+              <h4>In-Game Scenarios</h4>
+              <p>Real-game situations to become comfortable under pressure. Reading and reacting is the key focus — building complete, multi-dimensional players.</p>
+            </div>
+            <div class="service-item">
+              <h4>End-of-Session Evaluation</h4>
+              <p>Group feedback at the end of each session — where you're at, what's working, and what to focus on next.</p>
+            </div>
+          </div>
+
+          <div class="pricing-row">
+            <div class="price-badge">
+              <div class="price-amount">$50</div>
+              <div class="price-label">One-off</div>
+            </div>
+            <div class="price-badge">
+              <div class="price-amount">$240</div>
+              <div class="price-label">5 Week Lock-in</div>
+            </div>
+            <div class="price-badge">
+              <div class="price-amount">$450</div>
+              <div class="price-label">10 Week Lock-in</div>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:32px;">Book a Session</a>
+        </div>
+        <div class="service-card-img">
+          <img src="IMG_6389.jpeg" alt="Semi private basketball training" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK 2 -->
+<div class="photo-break">
+  <img src="IMG_6389.jpeg" alt="Training at Universal Athlete Centre" loading="lazy">
+  <div class="photo-break-overlay">
+    <div class="photo-break-text">PASSIONATE ABOUT<br>HELPING YOU GROW</div>
+  </div>
+</div>
+
+<!-- COACHES -->
+<section id="coaches">
+  <div class="container">
+    <p class="section-eyebrow">The Team</p>
+    <h2 class="section-title">MEET YOUR COACHES</h2>
+    <div class="red-line"></div>
+    <div class="coaches-grid">
+      <!-- Trent -->
+      <div class="coach-card">
+        <div class="coach-card-bg" style="background-image: url('UNIVERSN.jpeg');"></div>
+        <div class="coach-card-content">
+          <p class="coach-label">Founder & Head Coach</p>
+          <h3 class="coach-name">TRENT</h3>
+          <p class="coach-bio">Founder and owner of Universal Hoops with 13 years of playing experience. Currently playing NBL1 for Casey, Trent built Universal Hoops to give athletes access to the same standard of development he's experienced at the highest local level. He works with athletes of all ages and skill levels — and has experience with NBA Basketball Schools alongside junior and professional athletes.</p>
+          <div>
+            <span class="coach-tag">NBL1 Player</span>
+            <span class="coach-tag">13 Yrs Experience</span>
+            <span class="coach-tag">NBA Schools</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jack placeholder -->
+      <div class="coach-card">
+        <div class="coach-card-bg" style="background-image: url('IMG_6454.jpeg');"></div>
+        <div class="coach-card-content">
+          <p class="coach-label">Assistant Coach</p>
+          <h3 class="coach-name">JACK</h3>
+          <p class="coach-bio">More information about Jack coming soon — a key part of the Universal Hoops coaching team, bringing energy and expertise to every session.</p>
+          <div>
+            <span class="coach-tag">Universal Hoops</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <p class="section-eyebrow">What People Say</p>
+      <h2 class="section-title">REAL RESULTS, REAL STORIES</h2>
+      <div class="red-line"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testimonial-text">"We have been working with Trent for over a year. When we first started, my son knew nothing about basketball. As a trainer, Trent has gone above and beyond, taking him under his wing and helping him achieve great things on the court. Not only has Trent been an incredible coach, but he has also provided emotional support during my son's games. We cannot recommend Trent enough."</p>
+        <div class="testimonial-author">Ionela M.</div>
+        <div class="testimonial-role">Mother of Athlete</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testimonial-text">"My son Jackson has been training with Trent for the past 3 years. The improvement in his skills and fitness has been incredible — his shooting, ball handling, and confidence on the court have all come such a long way. Trent really knows his stuff. More importantly, he's been such a positive influence — patient, supportive, and someone Jackson genuinely looks up to."</p>
+        <div class="testimonial-author">Adam C.</div>
+        <div class="testimonial-role">Father of Athlete</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testimonial-text">"Trent has been fantastic for our son's development and confidence over the past 12 months — even when he's missing shots, you can see how much he backs himself. Trent builds great connection through regular chats and puts a strong focus on the mental side of the game, which is just as important as the skills work."</p>
+        <div class="testimonial-author">Jason C.</div>
+        <div class="testimonial-role">Father of Athlete</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testimonial-text">"We love how Trent breaks down each drill with clear demonstrations and simple, effective instruction that genuinely improves technique. His professionalism, guidance, and support are first class, and we highly recommend him to anyone serious about developing their basketball skills."</p>
+        <div class="testimonial-author">Tristan B.</div>
+        <div class="testimonial-role">Father of Athlete</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="container">
+    <h2>READY TO LEVEL UP?</h2>
+    <p>Spots are limited. Book your session today and start your journey.</p>
+    <a href="#contact" class="btn-white">Get Started</a>
+  </div>
+</div>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <div class="blog-header">
+      <div>
+        <p class="section-eyebrow">Knowledge & Tips</p>
+        <h2 class="section-title">FROM THE COURT</h2>
+        <div class="red-line"></div>
+      </div>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-card-img">
+          <img src="IMG_7940.jpeg" alt="Basketball training tips" loading="lazy">
+          <span class="blog-tag">Skill Development</span>
+        </div>
+        <div class="blog-card-content">
+          <p class="blog-date">March 2025</p>
+          <h3 class="blog-title">Why Footwork Is the Most Underrated Skill in Basketball</h3>
+          <p class="blog-excerpt">Most players focus on shooting and dribbling — but elite footwork is what separates good players from great ones. Here's why it matters and how to improve it.</p>
+          <a href="#contact" class="blog-read-more">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-img">
+          <img src="IMG_6454.jpeg" alt="Jump shot mechanics" loading="lazy">
+          <span class="blog-tag">Shooting</span>
+        </div>
+        <div class="blog-card-content">
+          <p class="blog-date">February 2025</p>
+          <h3 class="blog-title">The 3 Jump Shot Mechanics Most Players Get Wrong</h3>
+          <p class="blog-excerpt">Small adjustments in your shooting form can have a massive impact on consistency and range. Trent breaks down the three most common mechanical mistakes.</p>
+          <a href="#contact" class="blog-read-more">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-img">
+          <img src="IMG_6389.jpeg" alt="Basketball mindset" loading="lazy">
+          <span class="blog-tag">Mindset</span>
+        </div>
+        <div class="blog-card-content">
+          <p class="blog-date">January 2025</p>
+          <h3 class="blog-title">Building Confidence on the Court: The Mental Side of Basketball</h3>
+          <p class="blog-excerpt">The game is 50% mental. Developing confidence, handling mistakes, and competing under pressure are skills that need to be trained just like your handle.</p>
+          <a href="#contact" class="blog-read-more">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">LET'S TALK BASKETBALL</h2>
+        <div class="red-line"></div>
+        <p class="section-body">Ready to start? Have questions about sessions, pricing, or availability? Reach out directly — Trent will get back to you quickly.</p>
+
+        <div class="contact-info-items">
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <p class="contact-info-label">Location</p>
+              <p class="contact-info-value">Universal Athlete Centre, Keysborough</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <p class="contact-info-label">Phone</p>
+              <p class="contact-info-value"><a href="tel:0431888129">0431 888 129</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <p class="contact-info-label">Email</p>
+              <p class="contact-info-value"><a href="mailto:universalhoops247@gmail.com">universalhoops247@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">📸</div>
+            <div>
+              <p class="contact-info-label">Instagram</p>
+              <p class="contact-info-value"><a href="https://instagram.com/universalhoops" target="_blank">@universalhoops</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form class="contact-form" action="mailto:universalhoops247@gmail.com" method="GET">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Your first name" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Your last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Your phone number">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Session Type</label>
+            <select>
+              <option value="">Select session type...</option>
+              <option>1 on 1 Coaching — $85/hr</option>
+              <option>1 on 1 — 5 Week Lock-in ($415)</option>
+              <option>1 on 1 — 10 Week Lock-in ($800)</option>
+              <option>Semi Private — One-off ($50)</option>
+              <option>Semi Private — 5 Week Lock-in ($240)</option>
+              <option>Semi Private — 10 Week Lock-in ($450)</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="4" placeholder="Tell us a bit about yourself and your goals..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3139.85!2d145.175!3d-38.012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6692c2a7e0001%3A0x1!2sUniversal+Athlete+Centre%2C+Keysborough+VIC!5e0!3m2!1sen!2sau!4v1"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">UNIVERSAL <span>HOOPS</span></div>
+        <p class="footer-tagline">Where passion meets purpose. Basketball coaching for athletes who are serious about their game — based at Universal Athlete Centre, Keysborough.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/universalhoops" target="_blank" class="social-link" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="tel:0431888129" class="social-link" title="Call Us">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </a>
+          <a href="mailto:universalhoops247@gmail.com" class="social-link" title="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="#about-intro">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#coaches">Coaches</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Book a Session</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-links">
+          <li><a href="tel:0431888129">0431 888 129</a></li>
+          <li><a href="mailto:universalhoops247@gmail.com">universalhoops247@gmail.com</a></li>
+          <li><a href="https://instagram.com/universalhoops" target="_blank">@universalhoops</a></li>
+          <li style="color:var(--grey);font-size:14px;margin-top:8px;">Universal Athlete Centre<br>Keysborough, Melbourne</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Universal Hoops. All rights reserved.</p>
+      <p class="footer-copy">Built with purpose. Designed for athletes.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section, .coach-card, .testimonial-card, .blog-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
