@@ -1566,28 +1566,28 @@
       </div>
 
       <div>
-        <form class="contact-form" action="mailto:universalhoops247&#64;gmail&#46;com" method="GET">
+        <form class="contact-form" action="https://formspree.io/f/mreoagly" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label>First Name</label>
-              <input type="text" placeholder="Your first name" required>
+              <input type="text" name="first_name" placeholder="Your first name" required>
             </div>
             <div class="form-group">
               <label>Last Name</label>
-              <input type="text" placeholder="Your last name">
+              <input type="text" name="last_name" placeholder="Your last name">
             </div>
           </div>
           <div class="form-group">
             <label>Phone Number</label>
-            <input type="tel" placeholder="Your phone number">
+            <input type="tel" name="phone" placeholder="Your phone number">
           </div>
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" placeholder="your@email.com" required>
+            <input type="email" name="email" placeholder="your@email.com" required>
           </div>
           <div class="form-group">
             <label>Session Type</label>
-            <select>
+            <select name="session_type">
               <option value="">Select session type...</option>
               <option>1 on 1 Coaching — $85/hr</option>
               <option>1 on 1 — 5 Week Lock-in ($415)</option>
@@ -1600,7 +1600,7 @@
           </div>
           <div class="form-group">
             <label>Message</label>
-            <textarea rows="4" placeholder="Tell us a bit about yourself and your goals..."></textarea>
+            <textarea name="message" rows="4" placeholder="Tell us a bit about yourself and your goals..."></textarea>
           </div>
           <button type="submit" class="form-submit">Send Inquiry</button>
         </form>
@@ -1610,7 +1610,7 @@
     <!-- MAP -->
     <div class="map-container">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3139.85!2d145.175!3d-38.012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6692c2a7e0001%3A0x1!2sUniversal+Athlete+Centre%2C+Keysborough+VIC!5e0!3m2!1sen!2sau!4v1"
+        src="https://maps.google.com/maps?q=32+Atlantic+Drive+Keysborough+VIC+3173&output=embed"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
@@ -1633,7 +1633,7 @@
           <a href="tel:0431888129" class="social-link" title="Call Us">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           </a>
-          <a href="mailto:universalhoops247&#64;gmail&#46;com" class="social-link" title="Email">
+          <a href="/cdn-cgi/l/email-protection#35405b5c4350474654595d5a5a4546070102131603010e5258545c59131601030e565a58" class="social-link" title="Email">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
         </div>
@@ -1666,7 +1666,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function showTab(id, btn) {
     document.querySelectorAll('.tab-panel').forEach(function(p) {
       p.classList.remove('active');
@@ -1688,11 +1688,4 @@
   document.addEventListener('click', function(e) {
     var menu = document.getElementById('mobileMenu');
     var burger = document.querySelector('.hamburger');
-    if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)) {
-      menu.classList.remove('open');
-      burger.classList.remove('open');
-    }
-  });
-</script>
-</body>
-</html>
+    if (menu && menu.classList.contains('open') && !menu
