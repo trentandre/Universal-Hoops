@@ -1181,8 +1181,8 @@
       <div class="red-line"></div>
     </div>
     <div class="services-tabs">
-      <button class="tab-btn active" onclick="showTab('one-on-one')">1 on 1 Coaching</button>
-      <button class="tab-btn" onclick="showTab('semi-private')">Semi Private Sessions</button>
+      <button class="tab-btn active" onclick="showTab('one-on-one', this)">1 on 1 Coaching</button>
+      <button class="tab-btn" onclick="showTab('semi-private', this)">Semi Private Sessions</button>
     </div>
 
     <!-- 1 on 1 -->
@@ -1578,11 +1578,11 @@
 </footer>
 
 <script>
-  function showTab(id) {
+  function showTab(id, btn) {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + id).classList.add('active');
-    event.target.classList.add('active');
+    btn.classList.add('active');
   }
 
   // Scroll reveal
